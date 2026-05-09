@@ -1,7 +1,9 @@
 import FunForAllAges from "@/components/FunForAllAges";
 import HomeHero from "@/components/HomeHero";
 import ProductSlider from "@/components/ProductSlider";
-import Image from "next/image";
+import ShopByCategory from "@/components/ShopByCategory";
+import BestSellers from "@/components/BestSellers";
+import NewsletterPromo from "@/components/NewsletterPromo";
 
 export default function Home() {
   return (
@@ -9,6 +11,9 @@ export default function Home() {
       <HomeHero/>
       <ProductSlider/>
       <FunForAllAges/>
+      <ShopByCategory/>
+      <BestSellers/>
+      <NewsletterPromo/>
     </div>
   );
 }
