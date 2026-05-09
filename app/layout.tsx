@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Patrick_Hand } from "next/font/google";
 import "./globals.css";
+import TawkTo from "@/components/TawkTo";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 
@@ -37,7 +38,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <Navbar/>
-        <main className="flex-1">{children}</main>
+        <main className="flex-1">{children}<TawkTo /></main>
         <Footer/>
       </body>
     </html>
