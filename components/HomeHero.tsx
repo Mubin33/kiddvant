@@ -21,7 +21,7 @@ const slides: Slide[] = [
       "We're celebrating the educators who make a difference! Verify your educator status to enjoy 25% off during Teacher Appreciation Week and year-round 15% off savings.",
     buttonText: "Verify & Shop",
     image:
-      "https://www.melissaanddoug.com/cdn/shop/files/30607_Cool_Scoops_Ice_Creamery_052423-8643_2880x1200_1.jpg?v=1770838302&width=1500",
+      "/image/image 2.jpg",
     side: "left"
   },
   {
@@ -29,8 +29,7 @@ const slides: Slide[] = [
     title: "20% OFF  SCREEN-FREE  WEEK SAVINGS",
     description: "Celebrate Screen-Free Week by stocking up on fun hands-on toys that build real-life skills! Use code PLAYMAY2026 at checkout.",
     buttonText: "Shop Now",
-    image:
-      "https://www.melissaanddoug.com/cdn/shop/files/MD_CommunityProgram_Banners_A_ALT_02_Educator_Mobile_1.jpg?v=1777648653&width=1500",
+    image:"/image/image 1.jpg",
     side: "right"
   },
   {
@@ -39,7 +38,7 @@ const slides: Slide[] = [
     description: "Enjoy 20% off sitewide on toys that inspire purposeful play as kids unplug and tap into their own imagination! Use code PLAYMAY2026 at checkout.",
     buttonText: "Shop Now",
     image:
-      "https://www.melissaanddoug.com/cdn/shop/files/30608_Deluxe_Grill_Pizza_Oven_051223-7071_2880x1200_2.jpg?v=1724680390&width=1500",
+      "/image/image-3.jpg",
        side: "left"
   },
 ];
@@ -75,12 +74,11 @@ export default function HomeHero() {
             src={slide.image}
             alt="slide"
             fill
-            priority={index === 0}
             className="object-cover"
           />
 
           {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-white/95  to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/20  to-transparent" />
 
           {/* Content */} <div className="relative z-20 h-full flex items-center px-10 md:px-40 max-w-4xl">
             <div>

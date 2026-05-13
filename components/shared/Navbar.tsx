@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { Search, User, ShoppingCart, HelpCircle } from "lucide-react";
 import Image from "next/image";
+import { useCart } from "@/context/CartContext";
+import { useCartSidebar } from "@/context/CartSidebarContext";
 
 const navItems = [
   { name: "Home Page", href: "/" },
@@ -15,13 +17,16 @@ const navItems = [
 ];
 
 export default function Navbar() {
+  const { getCartCount } = useCart();
+  const { openCart } = useCartSidebar();
+
   return (
     <header className="w-full border-b bg-white">
       {/* Top Bar */}
       <div className="flex items-center justify-between px-6 md:px-16 py-4">
         
         {/* Search */}
-        <div className="hidden md:flex items-center border rounded-full px-4 py-2 w-[280px]">
+        <div className="hidden md:flex items-center border rounded-full px-4 py-2 w-[200px]">
           <Search size={18} className="text-gray-500 mr-2" />
           <input
             type="text"
@@ -33,9 +38,10 @@ export default function Navbar() {
         {/* Logo */}
         <div className="flex justify-center flex-1">
           <Image
-            src="/logo.png" // put your logo in public folder
+          //  src="../../public/kidd-vant-logo.png"
+            src="/kidd-vant-logo.png" // put your logo in public folder
             alt="logo"
-            width={140}
+            width={100}
             height={40}
           />
         </div>
@@ -44,7 +50,14 @@ export default function Navbar() {
         <div className="flex items-center gap-4">
           <HelpCircle className="cursor-pointer text-gray-600" />
           <User className="cursor-pointer text-gray-600" />
-          <ShoppingCart className="cursor-pointer text-gray-600" />
+          <div className="relative cursor-pointer" onClick={openCart}>
+            <ShoppingCart className="text-gray-600" />
+            {getCartCount() > 0 && (
+              <span className="absolute -top-2 -right-2 bg-blue-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
+                {getCartCount()}
+              </span>
+            )}
+          </div>
         </div>
       </div>
 

@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Patrick_Hand } from "next/font/google";
 import "./globals.css";
-import TawkTo from "@/components/TawkTo";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
+import { CartProvider } from "@/context/CartContext";
+import { CartSidebarProvider } from "@/context/CartSidebarContext";
+import CartSidebarWrapper from "@/components/CartSidebarWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,9 +39,14 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${patrickHandRegular.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <Navbar/>
-        <main className="flex-1">{children}<TawkTo /></main>
-        <Footer/>
+        <CartProvider>
+          <CartSidebarProvider>
+            <Navbar/>
+            <main className="flex-1">{children}</main>
+            <Footer/>
+            <CartSidebarWrapper />
+          </CartSidebarProvider>
+        </CartProvider>
       </body>
     </html>
   );

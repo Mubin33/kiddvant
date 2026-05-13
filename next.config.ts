@@ -2,8 +2,22 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
-   images: {
-    domains: ["www.melissaanddoug.com"],
+  turbopack: {
+    root: __dirname,
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "www.melissaanddoug.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        pathname: "/**",
+      },
+    ],
   },
 };
 
