@@ -61,7 +61,7 @@ export default function HomeHero() {
   }, [nextSlide]);
 
   return (
-    <div className="relative w-full h-[700px] overflow-hidden pb-10">
+    <div className="relative w-full h-[800px] overflow-hidden pb-10">
       {slides.map((slide, index) => (
         <div
           key={slide.id}

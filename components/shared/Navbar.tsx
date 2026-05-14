@@ -10,8 +10,9 @@ const navItems = [
   { name: "Home Page", href: "/" },
   { name: "About Us", href: "/about" },
   { name: "Product Page", href: "/products" },
-  { name: "Shope", href: "/shop" },
+  // { name: "Shope", href: "/shop" },
   { name: "New Arrival", href: "/new-arrival" },
+  { name: "Parents items", href: "/parents-items" },
   { name: "Partner with Us", href: "/partner" },
   { name: "Contact", href: "/contact" },
 ];
@@ -21,22 +22,22 @@ export default function Navbar() {
   const { openCart } = useCartSidebar();
 
   return (
-    <header className="w-full border-b bg-white">
+    <header className="w-full border-b bg-white sticky top-0 z-50">
       {/* Top Bar */}
       <div className="flex items-center justify-between px-6 md:px-16 py-4">
         
         {/* Search */}
-        <div className="hidden md:flex items-center border rounded-full px-4 py-2 w-[200px]">
+        {/* <div className="hidden md:flex items-center border rounded-full px-4 py-2 w-[200px]">
           <Search size={18} className="text-gray-500 mr-2" />
           <input
             type="text"
             placeholder="Search"
             className="outline-none w-full text-sm"
           />
-        </div>
+        </div> */}
 
         {/* Logo */}
-        <div className="flex justify-center flex-1">
+        <div className="flex justify-center">
           <Image
           //  src="../../public/kidd-vant-logo.png"
             src="/kidd-vant-logo.png" // put your logo in public folder
@@ -45,6 +46,18 @@ export default function Navbar() {
             height={40}
           />
         </div>
+        {/* Navbar */}
+      <nav className="hidden md:flex justify-center gap-10 py-3 text-sm lg:text-xl font-semibold text-gray-700">
+        {navItems.map((item, index) => (
+          <Link
+            key={index}
+            href={item.href}
+            className="hover:text-blue-600 transition"
+          >
+            {item.name}
+          </Link>
+        ))}
+      </nav>
 
         {/* Icons */}
         <div className="flex items-center gap-4">
@@ -61,18 +74,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Navbar */}
-      <nav className="hidden md:flex justify-center gap-10 py-3 text-sm lg:text-xl font-semibold text-gray-700">
-        {navItems.map((item, index) => (
-          <Link
-            key={index}
-            href={item.href}
-            className="hover:text-blue-600 transition"
-          >
-            {item.name}
-          </Link>
-        ))}
-      </nav>
+      
     </header>
   );
 }

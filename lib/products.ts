@@ -31,7 +31,7 @@ export const products: Product[] = [
     age_range: "3-6 years old",
     origin: "Hunan province",
     price_bdt: 550,
-    product_image: "https://images.unsplash.com/photo-1596464716127-f2a82984de30?w=400&h=400&fit=crop",
+    product_image: "/Product/p1.jpg",
     features: {
       contents: "20 magnetic fish + 2 fishing rods",
       packaging: "Storage bucket"
@@ -45,7 +45,7 @@ export const products: Product[] = [
     age_range: "4-6 years",
     origin: "Hunan province",
     price_bdt: 150,
-    product_image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop",
+    product_image: "/Product/p2.jpg",
     dimensions: "5.9*7.7*6.9cm",
     mechanism: "Inertia"
   },
@@ -57,7 +57,7 @@ export const products: Product[] = [
     age_range: "2-4 years",
     origin: "Hunan province",
     price_bdt: 100,
-    product_image: "https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=400&h=400&fit=crop",
+    product_image: "/Product/p3.webp",
     dimensions: "13*4.7*6cm"
   },
   {
@@ -67,7 +67,7 @@ export const products: Product[] = [
     age_range: "3-5 years",
     origin: "Hunan province",
     price_bdt: 180,
-    product_image: "https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=400&h=400&fit=crop",
+    product_image: "/Product/p4.webp",
     dimensions: "12.5*5*6CM"
   },
   {
@@ -77,7 +77,7 @@ export const products: Product[] = [
     age_range: "7-14 years old",
     type: "Stuffed doll",
     price_bdt: 600,
-    product_image: "https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=400&h=400&fit=crop",
+    product_image: "/Product/p5.webp",
     size_range: "30cm - 65cm"
   },
   {
@@ -88,7 +88,7 @@ export const products: Product[] = [
     age_range: "7-14 years old",
     color_variant: "Full English 224 + Cat Blue",
     price_bdt: 550,
-    product_image: "https://images.unsplash.com/photo-1596464716127-f2a82984de30?w=400&h=400&fit=crop",
+    product_image: "/Product/p6.webp",
     size_range: "30cm - 65cm"
   },
   {
@@ -98,7 +98,7 @@ export const products: Product[] = [
     material: "Plastic",
     age_range: "4-6 years old",
     price_bdt: 750,
-    product_image: "https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=400&h=400&fit=crop",
+    product_image: "/Product/p7.webp",
     size: "30cm - 65cm"
   },
   {
@@ -108,7 +108,7 @@ export const products: Product[] = [
     material: "Polyester fiber",
     age_range: "4-6 years old",
     price_bdt: 250,
-    product_image: "https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=400&h=400&fit=crop",
+    product_image: "/Product/p8.webp",
     size: "30cm - 65cm"
   },
   {
@@ -119,7 +119,7 @@ export const products: Product[] = [
     age_range: "4-6 years old",
     color: "Blue",
     price_bdt: 120,
-    product_image: "https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=400&h=400&fit=crop",
+    product_image: "/Product/p9.webp",
     size: "15cm"
   },
   {
@@ -129,7 +129,7 @@ export const products: Product[] = [
     material: "Paper/Plastic",
     age_range: "4-6 years old",
     price_bdt: 240,
-    product_image: "https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=400&h=400&fit=crop",
+    product_image: "/Product/p10.jpg",
     size: "15cm"
   }
 ];

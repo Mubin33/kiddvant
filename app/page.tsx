@@ -11,7 +11,7 @@ export default function Home() {
       <HomeHero/>
       <ProductSlider/>
       <FunForAllAges/>
-      <ShopByCategory/>
+      {/* <ShopByCategory/> */}
       <BestSellers/>
       <NewsletterPromo/>
     </div>

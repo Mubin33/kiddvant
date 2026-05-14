@@ -68,7 +68,7 @@ export default function ProductSlider() {
                   src={product.product_image}
                   alt={product.product_name}
                   fill
-                  className="object-contain"
+                  className="object-contain w-full object-cover rounded-t-2xl"
                 />
               </div>
 

@@ -60,7 +60,7 @@ const footerLinks = {
   help: {
     title: "NEED HELP?",
     links: [
-      { label: "Contact Us", href: "#" },
+      { label: "Contact Us", href: "/contact" },
       { label: "FAQ", href: "#" },
       { label: "Order Status", href: "#" },
       { label: "Shipping & Returns", href: "#" },

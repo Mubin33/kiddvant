@@ -1,236 +1,312 @@
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Heart, Award, Users, Leaf } from "lucide-react";
+import type { Metadata } from "next";
+import {
+  ArrowRight,
+  Heart,
+  Award,
+  Users,
+  Leaf,
+  Sparkles,
+  ShieldCheck,
+  Puzzle,
+  Target,
+} from "lucide-react";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "About Us | Kiddvant - Purposeful Play for Every Child",
-  description: "Learn about Kiddvant's mission to provide screen-free, educational toys that inspire imagination and learning in children of all ages.",
+  description:
+    "Learn about Kiddvant's mission to provide screen-free, educational toys that inspire imagination and learning in children of all ages.",
 };
 
 const values = [
   {
     icon: Heart,
-    title: "Made with Love",
-    description: "Every toy we create is designed with care, ensuring it's safe, durable, and brings joy to children and parents alike.",
+    title: "Made with care",
+    description:
+      "Every toy is designed to be safe, durable, and genuinely fun—so families can focus on play, not worry.",
   },
   {
     icon: Award,
-    title: "Quality Craftsmanship",
-    description: "We use premium materials and time-tested construction methods to create toys that last for generations.",
+    title: "Built to last",
+    description:
+      "We choose materials and construction that hold up to real life, from toddler towers to backyard adventures.",
   },
   {
     icon: Users,
-    title: "Child Development",
-    description: "Our toys are designed by child development experts to support learning through play at every stage.",
+    title: "Rooted in development",
+    description:
+      "Play patterns and age ranges are informed by how kids actually grow, explore, and learn.",
   },
   {
     icon: Leaf,
-    title: "Sustainability",
-    description: "We're committed to sustainable practices, using responsibly sourced materials and eco-friendly packaging.",
+    title: "Mindful footprint",
+    description:
+      "We keep packaging lean, source thoughtfully, and look for ways to reduce waste without cutting corners on quality.",
   },
 ];
 
 const milestones = [
-  { year: "2010", title: "The Beginning", description: "Kiddvant was founded with a simple mission: create toys that inspire imagination." },
-  { year: "2015", title: "Growing Together", description: "Expanded our product line to include educational toys for children up to 8 years old." },
-  { year: "2019", title: "Sustainability Commitment", description: "Launched our eco-friendly initiative with 100% recyclable packaging." },
-  { year: "2023", title: "Community Impact", description: "Donated over 1 million toys to children in need through our giving programs." },
-  { year: "2026", title: "Global Reach", description: "Now serving families in over 50 countries with our award-winning toy collections." },
+  {
+    year: "2010",
+    title: "Where it started",
+    description:
+      "Kiddvant began with a simple idea: toys should invite imagination, not replace it.",
+  },
+  {
+    year: "2015",
+    title: "Room to grow",
+    description:
+      "We widened our range so older kids could keep discovering through hands-on, screen-free play.",
+  },
+  {
+    year: "2019",
+    title: "Greener packaging",
+    description:
+      "Recyclable packaging and clearer labeling made it easier for families to choose responsibly.",
+  },
+  {
+    year: "2023",
+    title: "Giving back",
+    description:
+      "Community programs helped put quality play into more homes through donations and partnerships.",
+  },
+  {
+    year: "2026",
+    title: "Today",
+    description:
+      "We continue to refine our lineup, listen to parents and educators, and ship joy worldwide.",
+  },
+];
+
+const stats = [
+  { value: "500+", label: "Curated toys" },
+  { value: "50+", label: "Countries" },
+  { value: "1M+", label: "Families" },
+  { value: "15+", label: "Years of play" },
 ];
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 py-20 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-yellow-300 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2" />
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-pink-300 rounded-full blur-3xl transform translate-x-1/3 translate-y-1/3" />
+    <main className="min-h-screen bg-background text-foreground">
+      {/* Hero */}
+      <section className="relative overflow-hidden border-b border-border">
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.35]"
+          aria-hidden
+        >
+          <div className="absolute -left-32 top-0 h-96 w-96 rounded-full bg-primary/20 blur-3xl" />
+          <div className="absolute -right-20 bottom-0 h-80 w-80 rounded-full bg-chart-2/30 blur-3xl" />
+          <div className="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/25 blur-3xl" />
         </div>
-        
-        <div className="relative max-w-7xl mx-auto px-4 md:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="text-white">
-              <span className="inline-block px-4 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium mb-6">
-                Our Story
-              </span>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                Inspiring Imaginations Since 2010
-              </h1>
-              <p className="text-lg md:text-xl text-blue-100 mb-8 leading-relaxed">
-                We believe in the power of play. Our screen-free, thoughtfully designed toys 
-                help children explore, create, and grow—one adventure at a time.
-              </p>
+
+        <div className="relative mx-auto grid max-w-6xl gap-12 px-4 py-16 md:grid-cols-[1.1fr_0.9fr] md:px-8 md:py-24">
+          <div className="flex flex-col justify-center">
+            <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-border bg-card/80 px-4 py-1.5 text-sm font-medium text-muted-foreground shadow-sm backdrop-blur-sm">
+              <Sparkles className="size-4 text-primary" aria-hidden />
+              Our story
+            </div>
+            <h1 className="font-heading text-4xl font-bold tracking-tight text-balance md:text-5xl lg:text-6xl">
+              Play that feels{" "}
+              <span className="text-primary">purposeful</span>, not noisy.
+            </h1>
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
+              Kiddvant exists to champion screen-free, tactile play—toys that
+              reward curiosity, build confidence, and leave room for kids to
+              invent their own worlds.
+            </p>
+            <div className="mt-10 flex flex-wrap items-center gap-4">
+              <Link
+                href="/products"
+                className="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-3.5 text-sm font-semibold text-primary-foreground shadow-md transition hover:bg-primary/90"
+              >
+                Browse toys
+                <ArrowRight className="size-4" aria-hidden />
+              </Link>
               <Link
                 href="/"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-yellow-400 text-blue-900 font-bold rounded-full hover:bg-yellow-300 transition"
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3.5 text-sm font-semibold text-foreground transition hover:bg-muted/60"
               >
-                Explore Our Toys
-                <ArrowRight size={20} />
+                Back to home
               </Link>
             </div>
-            <div className="relative h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-2xl">
-              <Image
-                src="https://www.melissaanddoug.com/cdn/shop/files/30123_Rainbow_Stacker_2880x1200.jpg"
-                alt="Children playing with Kiddvant toys"
-                fill
-                className="object-cover"
-              />
+          </div>
+
+          {/* Decorative panel — no images */}
+          <div className="relative flex min-h-[280px] items-center justify-center md:min-h-[360px]">
+            <div
+              className="absolute inset-4 rounded-3xl border border-border/80 bg-gradient-to-br from-card via-card to-muted/40 shadow-lg"
+              aria-hidden
+            />
+            <div className="relative z-10 grid w-full max-w-sm gap-4 p-6">
+              <div className="flex items-start gap-4 rounded-2xl border border-border bg-background/90 p-4 shadow-sm backdrop-blur-sm">
+                <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                  <Puzzle className="size-6" aria-hidden />
+                </div>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                    Design lens
+                  </p>
+                  <p className="mt-1 font-medium leading-snug">
+                    Open-ended play first—so every session can go somewhere new.
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4 rounded-2xl border border-border bg-background/90 p-4 shadow-sm backdrop-blur-sm md:translate-x-4">
+                <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-chart-2/15 text-chart-2">
+                  <ShieldCheck className="size-6" aria-hidden />
+                </div>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                    Trust
+                  </p>
+                  <p className="mt-1 font-medium leading-snug">
+                    Safety and quality checks you can feel in the hand—not just on
+                    the label.
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4 rounded-2xl border border-border bg-background/90 p-4 shadow-sm backdrop-blur-sm md:-translate-x-2">
+                <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-accent/30 text-accent-foreground">
+                  <Target className="size-6" aria-hidden />
+                </div>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                    Mission
+                  </p>
+                  <p className="mt-1 font-medium leading-snug">
+                    Help families swap passive time for moments of real wonder.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Mission Statement */}
-      <section className="py-20 px-4 md:px-8 max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-6">
-          Our Mission
+      {/* Mission */}
+      <section className="mx-auto max-w-3xl px-4 py-16 text-center md:px-8 md:py-20">
+        <h2 className="font-heading text-3xl font-bold tracking-tight md:text-4xl">
+          Our mission
         </h2>
-        <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-          At Kiddvant, we&apos;re on a mission to provide children with the tools they need to 
-          learn, grow, and explore the world around them. We believe that the best toys 
-          don&apos;t need batteries or screens&mdash;they need imagination. Our commitment to quality,
-          safety, and educational value has made us a trusted partner for parents and educators
-          around the globe.
-        </p>
+        <blockquote className="mt-8 border-l-4 border-primary pl-6 text-left text-lg leading-relaxed text-muted-foreground md:text-xl">
+          Give children tools that respect their intelligence: tactile,
+          durable, and delightful—so parents feel good about what comes off the
+          shelf and kids feel proud of what they build.
+        </blockquote>
       </section>
 
-      {/* Values Grid */}
-      <section className="py-20 px-4 md:px-8 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
-              What We Stand For
+      {/* Values */}
+      <section className="border-y border-border bg-muted/30 py-16 md:py-20">
+        <div className="mx-auto max-w-6xl px-4 md:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="font-heading text-3xl font-bold tracking-tight md:text-4xl">
+              What we stand for
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Our core values guide every decision we make, from toy design to customer service.
+            <p className="mt-4 text-muted-foreground">
+              Principles we use when we pick products, write guides, and answer
+              your questions.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow duration-300"
+          <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {values.map((value) => (
+              <li
+                key={value.title}
+                className="group rounded-2xl border border-border bg-card p-6 shadow-sm transition hover:border-primary/30 hover:shadow-md"
               >
-                <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
-                  <value.icon className="w-7 h-7 text-blue-600" />
+                <div className="flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition group-hover:bg-primary/15">
+                  <value.icon className="size-6" aria-hidden />
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-3">
-                  {value.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <h3 className="mt-5 text-lg font-semibold">{value.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {value.description}
                 </p>
-              </div>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
       {/* Timeline */}
-      <section className="py-20 px-4 md:px-8 max-w-5xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
-            Our Journey
+      <section className="mx-auto max-w-3xl px-4 py-16 md:px-8 md:py-20">
+        <div className="text-center">
+          <h2 className="font-heading text-3xl font-bold tracking-tight md:text-4xl">
+            Our journey
           </h2>
-          <p className="text-gray-600">
-            From a small garage operation to a global brand, here&apos;s how we&apos;ve grown.
+          <p className="mt-4 text-muted-foreground">
+            A short history of how Kiddvant grew with the families we serve.
           </p>
         </div>
 
-        <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-4 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-0.5 bg-blue-200" />
-
-          <div className="space-y-12">
-            {milestones.map((milestone, index) => (
-              <div
-                key={index}
-                className={`relative flex items-start gap-8 ${
-                  index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                }`}
-              >
-                {/* Dot */}
-                <div className="absolute left-4 md:left-1/2 md:-translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow-md z-10" />
-
-                {/* Content */}
-                <div className={`ml-12 md:ml-0 md:w-[calc(50%-2rem)] ${
-                  index % 2 === 0 ? "md:text-right md:pr-8" : "md:text-left md:pl-8"
-                }`}>
-                  <span className="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-bold mb-2">
-                    {milestone.year}
-                  </span>
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">
-                    {milestone.title}
-                  </h3>
-                  <p className="text-gray-600">
-                    {milestone.description}
-                  </p>
-                </div>
-
-                {/* Spacer for alternating layout */}
-                <div className="hidden md:block md:w-[calc(50%-2rem)]" />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-20 px-4 md:px-8 bg-blue-900">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-4xl md:text-5xl font-bold text-yellow-400 mb-2">
-                500+
-              </div>
-              <p className="text-blue-200">Toys Created</p>
-            </div>
-            <div>
-              <div className="text-4xl md:text-5xl font-bold text-yellow-400 mb-2">
-                50+
-              </div>
-              <p className="text-blue-200">Countries Served</p>
-            </div>
-            <div>
-              <div className="text-4xl md:text-5xl font-bold text-yellow-400 mb-2">
-                1M+
-              </div>
-              <p className="text-blue-200">Happy Families</p>
-            </div>
-            <div>
-              <div className="text-4xl md:text-5xl font-bold text-yellow-400 mb-2">
-                15+
-              </div>
-              <p className="text-blue-200">Years of Play</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 px-4 md:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
-            Join the Kiddvant Family
-          </h2>
-          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-            Discover why millions of parents trust Kiddvant for their children&apos;s playtime. 
-            Explore our collection of award-winning, educational toys.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/"
-              className="px-8 py-4 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-700 transition"
+        <ul className="mt-14 list-none space-y-0 p-0">
+          {milestones.map((milestone, index) => (
+            <li
+              key={milestone.year}
+              className="relative flex gap-5 pb-10 last:pb-0"
             >
-              Shop Now
+              <div className="flex w-6 shrink-0 flex-col items-center pt-1.5">
+                <span
+                  className="size-3.5 shrink-0 rounded-full border-4 border-background bg-primary shadow-sm"
+                  aria-hidden
+                />
+                {index < milestones.length - 1 ? (
+                  <span
+                    className="mt-2 w-px flex-1 min-h-[1.25rem] bg-border"
+                    aria-hidden
+                  />
+                ) : null}
+              </div>
+              <div className="min-w-0 flex-1 rounded-2xl border border-border bg-card p-5 shadow-sm">
+                <span className="inline-flex rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary">
+                  {milestone.year}
+                </span>
+                <h3 className="mt-3 text-lg font-semibold">{milestone.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  {milestone.description}
+                </p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* Stats */}
+      <section className="border-t border-border bg-primary py-14 text-primary-foreground md:py-20">
+        <div className="mx-auto grid max-w-5xl grid-cols-2 gap-10 px-4 md:grid-cols-4 md:gap-8 md:px-8">
+          {stats.map((s) => (
+            <div key={s.label} className="text-center">
+              <p className="text-3xl font-bold tabular-nums tracking-tight text-primary-foreground md:text-4xl">
+                {s.value}
+              </p>
+              <p className="mt-2 text-sm text-primary-foreground/80">{s.label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="mx-auto max-w-3xl px-4 py-16 md:px-8 md:py-20">
+        <div className="rounded-3xl border border-border bg-card p-8 text-center shadow-sm md:p-12">
+          <h2 className="font-heading text-2xl font-bold tracking-tight md:text-3xl">
+            Ready to shop with intention?
+          </h2>
+          <p className="mx-auto mt-4 max-w-lg text-muted-foreground">
+            Explore toys chosen for creativity, longevity, and the kind of play
+            you remember long after the box is gone.
+          </p>
+          <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
+            <Link
+              href="/products"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-3.5 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
+            >
+              Shop the collection
+              <ArrowRight className="size-4" aria-hidden />
             </Link>
             <Link
-              href="#"
-              className="px-8 py-4 border-2 border-blue-600 text-blue-600 font-bold rounded-full hover:bg-blue-50 transition"
+              href="/"
+              className="inline-flex items-center justify-center rounded-full border border-border bg-background px-8 py-3.5 text-sm font-semibold transition hover:bg-muted/60"
             >
-              Contact Us
+              Return home
             </Link>
           </div>
         </div>
